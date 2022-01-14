@@ -97,7 +97,23 @@ class LinkedList:
         return 'deleted'
         
         
-       
+    def reverse(self):
+        if self.head == None:
+            return None
+        
+        if self.length == 1:
+            return self.head.value
+        curr_list = self.head
+        new_list = None
+        temp = None
+        
+        while(curr_list != None):
+            temp = curr_list.next
+            curr_list.next  = new_list
+            new_list = curr_list
+            curr_list = temp
+        
+        self.head = new_list 
  
  
  
